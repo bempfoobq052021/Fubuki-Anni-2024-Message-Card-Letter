@@ -1,0 +1,31 @@
+html, body{
+   width: 100%;
+   height: 100%;
+}
+
+.coin{
+    width: 50px;
+    height: 50px;
+}
+
+.coin_front{
+}
+
+.coin_back{
+    background-image: url("coin back.jpg");
+    background-size: 50px;
+}
+
+.coin_side{
+    width: 10px;
+    height: 50px;
+}
+
+.drop_target {
+    width: 100px;
+    height: 100px;
+}
+
+.shining {
+    background-repeat: no-repeat;
+}

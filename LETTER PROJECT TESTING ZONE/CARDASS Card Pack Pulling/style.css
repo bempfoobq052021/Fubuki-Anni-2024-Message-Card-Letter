@@ -1,0 +1,35 @@
+html, body{
+   width: 100%;
+   height: 100%;
+}
+
+#main{
+   width: 100%;
+   height: 80%;
+}
+
+.card-background{
+   position: relative;
+   background-image: url("75957635_p0.jpg");
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   width: 50%;
+   height: 80%;
+}
+
+.card-message{
+   position: relative;
+   width: 50%;
+   height: 80%;
+   top: -80%;
+}
+
+.hidden-backside{
+   position: absolute;
+   display: none;  
+}
+
+.blurred{
+	blur: 1000px;
+}

@@ -1,0 +1,164 @@
+.interaction_container{
+    position: relative;
+    top: 100px;
+    left: 100px;
+}
+
+
+/* Taken from https://www.w3schools.com/howto/howto_css_flip_card.asp */
+
+.LETTER_container{
+    z-index: 0;
+    width: 226px;
+    height: 325px;
+    padding: 20px 20px; /* Exactly 20/96 inch (5mm). Probably enough. */
+    
+    /* The part below is sealed but prepared for PRINTING PURPOSES ONLY.
+    0.5cm because I remember that's the number for MTG cards. 
+    DO NOT GO LOWER THAN 5mm! That's the limit for die cutting and cutter plates. 
+    If you're planning to laser cut, the limit is probably 0.5 - 3mm due to edge burns. */
+    /* padding: 0.5cm */
+    
+    &.TEST_CONTAINER{
+        background-color: blue;
+    }
+}
+
+.LETTER{
+    
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    /* This flag is necessary for backface-visibility. */
+    transform-style: preserve-3d; 
+    
+    /* CSS nesting */
+    &.TEST_LETTER{
+        background-color: #e028c5; /* This is some shade of pink, need refining. */
+    }
+    
+    /* Still unsure about flavor text, but I'm leaving this here. */
+    &.text_frontside{
+    }
+    
+    /* Backside, the main letter. This may end up useless if people uploads .png files with texts.*/
+    &.text_backside{
+        font-size: min(16px, 9px);
+    }
+    
+    .LETTER_content{
+    
+        z-index: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: green;
+        
+        /* This will hide the backside of the class object, 
+        so we can easily just use CSS Transform instead of hide/unhide. */
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+        
+        /* Card Layer, Frontside. */
+        &.layer_5_card_front{
+            z-index: 0;
+            background-color: dodgerblue;
+        }
+        
+        /* Card Layer, Backside. */
+        &.layer_5_card_back{
+            z-index: 0;
+            background-color: purple;
+            transform: rotateX(180deg);
+        }
+    }
+
+}
+
+.LETTER_container:hover .LETTER{
+    transform: rotateX(180deg); /* Rotate along the Y-axis (vertical) */
+}
+
+.layer_3_card_disp{
+    width: 100%;
+    margin: auto;
+    left: 50%;
+    text-align: center;
+}
+
+/* Animation chain, credits to : https://ccscoder.medium.com/chaining-css-animations-using-javascript-1b171708360e */
+
+:root{
+    --animation-duration: 1s;
+}
+
+/* We specify the start and result of the animation for the first one..  */
+
+@keyframes move_down{
+    to {
+        transform: translateY(256px);
+    }
+}
+
+/* and only specify the result for the next animation  */
+
+@keyframes flip_and_return{
+    from {
+        transform: translateY(256px);
+    }
+    to{
+        transform: rotateX(180deg);
+    }
+}
+
+.move_down{
+    animation: move_down var(--animation-duration) forwards ease-in;
+}
+
+.flip_and_return{
+    animation: flip_and_return var(--animation-duration) forwards ease-out;
+}
+
+
+
+
+@media (orientation: landscape) {
+    
+    /* Card Dispenser Layer. Landscape position not decided yet, 
+    but probably around 1/3 left, vertical-align middle*/
+    .layer_3_card_disp{
+        z-index: 3;
+        vertical-align: middle;
+        background-color: red;
+    }
+
+    /* If landscape, album opens up like a butterfly / two-side binder */
+    .layer_album{
+        z-index: 10;
+        display: hidden;
+        /* There may be different image for landscape and portrait. */
+        background-image: url("../media/album_default_landscape_fallback.jpg"); 
+        min-height: 650 px;
+        min-width: 452 px;
+    }
+}
+
+@media (orientation: portrait) {
+    
+    /* Card Dispenser Layer. Portrait one must be top center, 
+    around 2/3 of the screen with minimal of 50 px from the edge.*/
+    .layer_3_card_disp{
+        z-index: 0;
+        margin: auto;       /* TODO: NEED TESTING */
+    }
+
+    /* If landscape, album opens up like a butterfly / two-side binder */
+    .layer_album{
+        z-index: 10;
+        /* There may be different image for landscape and portrait. */
+        background-image: url("../media/album_default_landscape_fallback.jpg");  
+        min-height: 650 px;
+        min-width: 452 px;
+    }
+}

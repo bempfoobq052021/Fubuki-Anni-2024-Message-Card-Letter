@@ -1,0 +1,142 @@
+
+/* General Styling for cards*/
+
+h1.cards{
+    text-align: center;
+}
+
+p.best-wishes{
+    text-align: center;
+    padding: 10px 15px 10px 15px;
+}
+
+h2.sender-display-name{
+    text-align: center;
+    padding: 10px 15px 10px 15px;
+}
+
+.flip-card-container a{
+    text-align: center;
+    padding: 10px 15px 10px 15px;
+}
+
+
+/* Flipping mechanism */
+
+.flip-container {
+    -moz-transform-style: preserve-3d;
+    /* These numbers was chosen to closely represent an A7 (slightly larger) at 120dpi.
+        Why 120 dpi? Because we may need to print this out. 
+        120dpi on your screen needs at least 300 - 600 dpi to print out in nice details.
+        and that could get expensive. I can go smaller but at some point the image
+        will not be visible on default in the high-dpi displays that we 
+        usually have in recent screens.
+        Expected image size in 175KB per file. If we get to 100 images that's 
+        175x100 = 17500 / 1024 ~ 18 MB. People can submit all sorts of sizes but
+        this will be the final size for display and priting. Note that the admin have
+        the right to cut and resize the image but not to edit the lines or coloring.
+        Open for discussions.
+    */
+    width: 360px;
+    height: 506px;
+    background-color: blue;
+    z-index: 2;
+
+}
+
+/* flip speed goes here */
+.flipper {
+    -webkit-transition: 0.6s;
+    -webkit-transform-style: preserve-3d;
+
+    -moz-transition: 0.6s;
+    -moz-transform-style: preserve-3d;
+
+    -o-transition: 0.6s;
+    -o-transform-style: preserve-3d;
+
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    position: absolute;
+    height: 506px;
+}
+/* This codes sets the offset for the cards. For example, the first card should be
+        at least a few spaces apart from the cards. We're projected to have only 
+        5 cards per pull.*/
+
+.flipper div:nth-child(1){
+    top: 50%;
+    left: 50%;
+    background-color: black;
+}
+.flipper div:nth-child(2){
+    top: 10%;
+    left: 10%;
+    background-color: purple;
+}
+.flipper:nth-child(3){
+    top: 30%;
+    left: 30%;
+}
+.flipper:nth-child(4){
+    top: 40%;
+    left: 40%;
+}
+.flipper:nth-child(5){
+    top: 50%;
+    left: 50%;
+}
+.flipper:nth-child(6){
+    top: 60%;
+    left: 60%;
+}
+.flipper:nth-child(7){
+    top: 70%;
+    left: 70%;
+}
+.flipper:nth-child(8){
+    top: 80%;
+    left: 80%;
+}
+
+.flipper > img {
+    opacity: 0;
+    z-index: 0;
+}
+
+.flipper.flipped {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+/* hide back of pane during swap */
+.front, .back {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* front pane, placed above back */
+.front {
+    z-index: 2;
+    background-color: #8c8c8c;
+}
+
+/* back, initially hidden pane */
+.back {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);    
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    background-color: #ded9d9;
+}

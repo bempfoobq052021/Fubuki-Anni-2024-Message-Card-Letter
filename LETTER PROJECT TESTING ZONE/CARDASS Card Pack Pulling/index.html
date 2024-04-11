@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+	
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="layers.css">
+  </head>
+  <body>
+    <!--general rule:
+	  You have a background image and a text. Preferably, the background image is drawn in css or canvas,
+	  and can rescale with the user's zoom. It needs to be in portrait, like a letter. Landscape will be considered
+	  later.
+	  Every message gets a random card background that can flip around to reveal the message.
+	  I'll think about the security and service bombing management later. At least I can prevent bots by using CAPTCHA.
+      Resolved: We're having people upload to the admins and have them add to the database. Be prepared for an onslaught of emails or discord messages, also, always check. Absolutely remind people to check before clicking any links, even if it looks trustable.
+	-->
+    <div class="interaction_container">
+        <span class="layer_3_card_disp">
+            <img src="../media/carddispenser.jpg" alt="Card Dispenser">
+        </span>
+        <div class="LETTER_container TEST_CONTAINER">
+            <div class="LETTER TEST_LETTER" >
+                <div class="LETTER_content layer_5_card_front">
+                    nyan
+                </div>
+                <div class="LETTER_content layer_5_card_back">
+                    meow
+                </div>
+            </div>
+        </div>
+        <button id="drawcard"> Draw Card </button>
+    </div>
+	<script src="script.js"></script>
+  </body>
+</html>
