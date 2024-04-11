@@ -20,23 +20,12 @@
 	  I'll think about the security and service bombing management later. At least I can prevent bots by using CAPTCHA.
       Resolved: We're having people upload to the admins and have them add to the database. Be prepared for an onslaught of emails or discord messages, also, always check. Absolutely remind people to check before clicking any links, even if it looks trustable.
 	-->
-    <div class="drop_target coin_back" >
-        <img class="drop_target" src="transparent_coin_circle_50px.png" alt="Back-side of the coin" id="drop_target" ondragenter="coin_enters_target(event)" ondragover="coin_hovering(event)" ondrop="coin_drop(event)" ondragleave="coin_leaves_target(event)">
-    </div>
-    <div class="coin_container" id="coin_container" draggable="true" ondragstart="coin_init(event)" ondragend="coin_position_readjust(event)">
-        <div class="sukonbu_coin"> <!-- This one gets rotated -->
-            <div class="coin coin_front">
-                <img src="transparent_coin_circle_50px.png" alt="Front-side of the coin">
-            </div>
-            <div class="coin coin_back">
-                <img src="transparent_coin_circle_50px.png" alt="Back-side of the coin">
-            </div>
-            <div class="coin coin_side">
-                <img src="coin side.png" alt="The side of the coin">
-            </div>
+    <div class="knob_container" id="knob_container">
+        <div class="knob unturned"> <!-- This one gets rotated -->
+            
         </div>
     </div>
-    Current State: <p id="debug_coin_state_display"></p>
+    Current State: <p id="debug_state_display"></p>
     Target Div ID: <p id="ev_target_id"></p>
 	<script src="script.js"></script>
   </body>
