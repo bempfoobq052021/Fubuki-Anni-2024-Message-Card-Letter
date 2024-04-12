@@ -38,7 +38,7 @@ html, body{
    height: 200px;
 }
 
-.turned{
+.knob_turned{
     transform: rotate(360deg);
     transition: transform 1s ease-in;
 }

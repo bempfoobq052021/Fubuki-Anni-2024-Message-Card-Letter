@@ -20,9 +20,30 @@
 	  I'll think about the security and service bombing management later. At least I can prevent bots by using CAPTCHA.
       Resolved: We're having people upload to the admins and have them add to the database. Be prepared for an onslaught of emails or discord messages, also, always check. Absolutely remind people to check before clicking any links, even if it looks trustable.
 	-->
-    <div class="drop_target coin_back" >
-        <img class="drop_target" src="transparent_coin_circle_50px.png" alt="Back-side of the coin" id="drop_target" ondragenter="coin_enters_target(event)" ondragover="coin_hovering(event)" ondrop="coin_drop(event)" ondragleave="coin_leaves_target(event)">
+    <div class="carddass_machine_wrapper">
+        <div class="box_card_output">
+            <div class="interaction_container">
+            <span class="layer_3_card_disp">
+                <img src="../media/carddispenser.jpg" alt="Card Dispenser">
+            </span>
+            <div class="LETTER_container TEST_CONTAINER">
+                <div class="LETTER TEST_LETTER" >
+                    <div class="LETTER_content layer_5_card_front">
+                        nyan
+                    </div>
+                    <div class="LETTER_content layer_5_card_back">
+                        meow
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>        
+        <div class="box_coin_insert coin_hole">
+            <img class="drop_target" src="coin_hole.png" alt="Back-side of the coin" id="drop_target" ondragenter="coin_enters_target(event)" ondragover="coin_hovering(event)" ondrop="coin_drop(event)" ondragleave="coin_leaves_target(event)">
+        </div>
+        <img class="box_knob" id="knob_img" src="knob.jpg" alt="knob" />
     </div>
+    
     <div class="coin_container" id="coin_container" draggable="true" ondragstart="coin_init(event)" ondragend="coin_position_readjust(event)">
         <div class="sukonbu_coin"> <!-- This one gets rotated -->
             <div class="coin coin_front">
@@ -36,8 +57,8 @@
             </div>
         </div>
     </div>
-    <img id="knob_img" src="knob.jpg" alt="knob" />
-    <br/>Current State: <p id="debug_state_display"></p>
+    
+    Current State: <p id="debug_state_display"></p>
     Target Div ID: <p id="ev_target_id"></p>
 	<script src="script.js"></script>
   </body>

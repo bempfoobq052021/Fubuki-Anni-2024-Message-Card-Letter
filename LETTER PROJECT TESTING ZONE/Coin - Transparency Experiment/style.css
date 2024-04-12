@@ -3,28 +3,27 @@ html, body{
    height: 100%;
 }
 
-.knob_container{
+.coin{
+    width: 50px;
+    height: 50px;
+}
+
+.coin_front{
+    background-image: url("coin front.jpg");
+    background-size: 50px;
+}
+
+.coin_back{
+    background-image: url("coin back.jpg");
+    background-size: 50px;
+}
+
+.coin_side{
+    width: 10px;
+    height: 50px;
+}
+
+.drop_target {
     width: 100px;
     height: 100px;
-}
-
-.knob{
-    background-image: "knob.jpg";
-    repeat: no-repeat;
-}
-
-.unturned{
-}
-
-@keyframe knob_turning{
-    from{
-        transform: rotateX(0deg) rotateY(0deg);
-    }
-    to{
-        transform: rotateX(180deg) rotateY(180deg);
-    }
-}
-
-.turned{
-    animation: 
 }
