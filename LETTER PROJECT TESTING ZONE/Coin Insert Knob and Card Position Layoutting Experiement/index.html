@@ -41,19 +41,22 @@
         <div class="box_coin_insert coin_hole">
             <img class="drop_target" src="coin_hole.png" alt="Back-side of the coin" id="drop_target" ondragenter="coin_enters_target(event)" ondragover="coin_hovering(event)" ondrop="coin_drop(event)" ondragleave="coin_leaves_target(event)">
         </div>
+        
         <img class="box_knob" id="knob_img" src="knob.jpg" alt="knob" />
-    </div>
+        
+        <img class="box_wallet" id="wallet_img" src="Wallet_Asset_closed.png" onmouseenter="wallet_open(event)" onmouseleave="wallet_close(event)" />
     
-    <div class="coin_container" id="coin_container" draggable="true" ondragstart="coin_init(event)" ondragend="coin_position_readjust(event)">
-        <div class="sukonbu_coin"> <!-- This one gets rotated -->
-            <div class="coin coin_front">
-                <img src="transparent_coin_circle_50px.png" alt="Front-side of the coin">
-            </div>
-            <div class="coin coin_back">
-                <img src="transparent_coin_circle_50px.png" alt="Back-side of the coin">
-            </div>
-            <div class="coin coin_side">
-                <img src="coin side.png" alt="The side of the coin">
+        <div class="box_coin coin_container" onmouseenter="wallet_open_coin(event)" onmouseleave="wallet_close_coin(event)" id="coin_container" draggable="true" ondragstart="coin_init(event)" ondragend="coin_position_readjust(event)">
+            <div class="sukonbu_coin"> <!-- This one gets rotated -->
+                <div class="coin coin_front">
+                    <img src="transparent_coin_circle_50px.png" alt="Front-side of the coin">
+                </div>
+                <div class="coin coin_back">
+                    <img src="transparent_coin_circle_50px.png" alt="Back-side of the coin">
+                </div>
+                <div class="coin coin_side">
+                    <img src="coin side.png" alt="The side of the coin">
+                </div>
             </div>
         </div>
     </div>

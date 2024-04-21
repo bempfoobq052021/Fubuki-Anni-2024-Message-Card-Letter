@@ -4,6 +4,32 @@
     3. 
 */
 
+/* Wallet Function */
+function wallet_open(ev){
+    ev.target.src = "Wallet_Asset_open.png";
+    document.getElementById("coin_container").style.opacity = 1;
+}
+
+function wallet_close(ev){
+    ev.target.src = "Wallet_Asset_closed.png";
+    document.getElementById("coin_container").style.opacity = 0;
+}
+
+/* This is actually a wallet - coin interface hack,
+written to prevent the coin disappearing as the mouse changes
+from the wallet's div to the coin's div. */
+
+function wallet_open_coin(ev){
+    ev.target.style.opacity = 1;
+    document.getElementById("wallet_img").src = "Wallet_Asset_open.png";
+}
+
+function wallet_close_coin(ev){
+    ev.target.style.opacity = 0;
+    document.getElementById("wallet_img").src = "Wallet_Asset_closed.png";
+}
+
+
 /* Coin Insert Functions */
 /* Dragging Behaviour and Bounding Box Checks for Coins 
 Source: https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop2
@@ -73,7 +99,8 @@ function CA_animate(elem, animation, remove_animation = null) {
   });
 }
 
-/* Knob Functions */
+
+/* Knob and Card Animation Functions */
 
 async function CA_animation_running() {
   const KNOB = document.getElementById("knob_img");
@@ -88,3 +115,5 @@ async function CA_animation_running() {
   console.log("flip and return");
   document.getElementById("knob_img").classList.remove("knob_turned");
 }
+
+

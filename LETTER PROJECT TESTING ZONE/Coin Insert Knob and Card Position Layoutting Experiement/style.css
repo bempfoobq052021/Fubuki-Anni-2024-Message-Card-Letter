@@ -5,30 +5,46 @@ html, body{
 
 /* Carddass Machine Wrapper */
 .carddass_machine_wrapper{
-    width: 500px;  /* 50px per column */
-    height: 400px;  /* 8 rows */
+    left: 250px;
+    width: 700px;  /* 50px per column */
+    height: 700px;  /* 14 rows */
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(14, 1fr);
     grid-auto-rows: 50px;
     border: solid red;
 }
 
 .box_card_output{
-    grid-column: 1 / 7;
+    grid-column: 1 / 8;
     grid-row: 1 / 9;
     border: solid black;
 }
 
 .box_coin_insert{
-    grid-column: 7 / 11;
+    grid-column: 8 / 12;
     grid-row: 1 / 5;
     border: solid black;
 }
 
 .box_knob{
-    grid-column: 7 / 11;
+    grid-column: 8 / 12;
     grid-row: 5 / 9;
     border: solid black;
+}
+
+.box_wallet{
+    width: 200px;
+    height: 200px;
+    grid-column: 11 / 16;
+    grid-row: 11 / 16;
+    border: solid black;
+}
+
+.box_coin{
+    grid-column: 12 / 13;
+    grid-row: 11 / 12;
+    border: solid black;
+    opacity: 0;
 }
 
 /* Card Drawing Animations */
